@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-18 21:11:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.web.pojo.Emp" table="emp" catalog="test">
+        <id name="empid" type="java.lang.Integer">
+            <column name="empid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="dept" class="com.web.pojo.Dept" fetch="select">
+            <column name="deptid" />
+        </many-to-one>
+        <property name="empname" type="string">
+            <column name="empname" />
+        </property>
+        <property name="empsex" type="string">
+            <column name="empsex" />
+        </property>
+        <property name="empage" type="java.lang.Integer">
+            <column name="empage" />
+        </property>
+        <property name="empphoto" type="string">
+            <column name="empphoto" />
+        </property>
+        <property name="empaddress" type="string">
+            <column name="empaddress" />
+        </property>
+        <property name="empdate" type="timestamp">
+            <column name="empdate" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

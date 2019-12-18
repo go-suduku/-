@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-18 21:11:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.web.pojo.Demo" table="demo" catalog="test">
+        <composite-id name="id" class="com.web.pojo.DemoId">
+            <key-property name="id" type="long">
+                <column name="id" />
+            </key-property>
+            <key-property name="name" type="string">
+                <column name="name" length="50" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

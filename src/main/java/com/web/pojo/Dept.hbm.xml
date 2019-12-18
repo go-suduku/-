@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-12-18 21:11:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.web.pojo.Dept" table="dept" catalog="test">
+        <id name="deptid" type="java.lang.Integer">
+            <column name="deptid" />
+            <generator class="identity" />
+        </id>
+        <property name="deptname" type="string">
+            <column name="deptname" length="50" />
+        </property>
+        <property name="deptnum" type="java.lang.Integer">
+            <column name="deptnum" />
+        </property>
+        <property name="deptdesc" type="string">
+            <column name="deptdesc" length="50" />
+        </property>
+        <set name="emps" table="emp" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="deptid" />
+            </key>
+            <one-to-many class="com.web.pojo.Emp" />
+        </set>
+    </class>
+</hibernate-mapping>
